@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="{{ URL::asset('/images/sz_logo.png') }}" type="image/x-icon"/>    <!-- CSRF Token -->
+    <link rel="icon" href="{{ URL::asset('/images/singaporezoo.svg') }}" type="image/x-icon"/>    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
@@ -17,6 +17,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Nunito+Sans:wght@900&display=swap" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> --}}
 
 
     <!-- Styles -->
@@ -97,7 +98,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            box-shadow: 0px 0px 70px 500px rgba(0, 0, 0, 0.2) inset;
+            box-shadow: 0px 0px 70px 500px rgba(0, 0, 0, 0.3) inset;
             height: 40vw;
             padding-top: 20vw;
             font-size: 5vw;
@@ -176,8 +177,10 @@
         .logo{
             width: 5vw;
             height: auto;
-            background-color: rgba(255, 255, 255, 0.678);
-            padding: 0.1vw;
+            background: rgb(43,72,29);
+            background: radial-gradient(circle, rgba(43,72,29,0.9270658605238971) 0%, rgba(252,176,69,0) 60%, rgba(253,29,29,0) 100%);
+
+           padding: 0.1vw;
             border-radius: 0.5vw;
         }
         .carouselBorder{
@@ -188,7 +191,8 @@
         .indexData{
             align-items: center;
             text-align: center;
-            margin-top: 3vw;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
         }
         .indexTable{
             margin-top: 2vw;
@@ -276,7 +280,7 @@
         <nav class="navbar navbar-dark navbar-expand-md navbar navbar-expand-lg fixed-top shade" >
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="logo" src="{{asset('images/sz_logo.png')}}" alt="">
+                    <img class="logo" src="{{asset('images/singaporezoo.svg')}}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

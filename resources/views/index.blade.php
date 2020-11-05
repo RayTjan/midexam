@@ -93,14 +93,14 @@
                 <div class="container ">
                 <h1 class="display-3 nunito">ANIMAL DATA</h1>
                 <p class="lead greya">Add, Edit, Update, Delete Animals!</p>
-                <a class="btn btn-primary btn-lg greenBackground nunito" href="{{route('animal.index')}}" role="button">Go to Animal</a>
+                <a class="btn btn-lg greenButton nunito" href="{{route('animal.index')}}" role="button">Go to Animal</a>
                 </div>
             </div>
             <div class="jumbotron jumbotron-fluid right">
                 <div class="container ">
                 <h1 class="display-3 nunito">HABITAT DATA</h1>
                 <p class="lead greya">Add, Edit, Update, Delete Habitats!</p>
-                <a class="btn btn-primary btn-lg greenBackground nunito" href="{{route('habitat.index')}}" role="button">Go to Habitat</a>
+                <a class="btn btn-lg greenButton nunito" href="{{route('habitat.index')}}" role="button">Go to Habitat</a>
                 </div>
             </div>
         </div>
