@@ -18,7 +18,7 @@
     <br>
     <div class="row justify-content-center">
         <a  href="{{ url('/') }}">
-            <button href="{{ url('/') }}"class="btn btn-primary nunito greenButton">Create, Edit, Update & Delete some data!</button>
+            <button href="{{ url('/') }}"class="btn nunito greenButton">Create, Edit, Update & Delete some data!</button>
         </a>
     </div>
 </div>

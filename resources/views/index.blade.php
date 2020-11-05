@@ -18,7 +18,7 @@
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('images/zoo_preview.jpg')}}" class="d-block w-100 carouselImage" alt="...">
+                    <img src="{{asset('images/zoo_bus.jpg')}}" class="d-block w-100 carouselImage" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                     <h5 class="nunito">Our List of Animals</h5>
                     <p class="greya">Varities of species throughout the world</p>
