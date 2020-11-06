@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('judul','Animal')
+@section('judul', 'Animal')
 @section('content')
     <div class="headFlag">
         <h1 class="nunito">ANIMAL DATABASE</h1>
@@ -7,9 +7,11 @@
     <div class="container-fluid" style="margin-top: 20px;">
 
         <div class="row">
-            {{-- auth to limit content, it cannot be accessed until login --}}
+            {{-- auth to limit content, it cannot be accessed until login
+            --}}
             <div class="col-md-2">
-            <a  href="{{route('animal.create')}}" class="btn btn-block greenButton nunito" role="button" aria-pressed="true">Add Animal</a>
+                <a href="{{ route('animal.create') }}" class="btn btn-block greenButton nunito" role="button"
+                    aria-pressed="true">Add Animal</a>
             </div>
         </div>
         <div class="row" style="margin-top: 30px;">
@@ -30,26 +32,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($animals as $animal)  
-                    <tr>
-                        <td><p>{{$animal->name}}</p></td>
-                        <td><p>{{$animal->family}}</p></td>
-                        <td>{{$animal->diet}}</td>
-                        <td>{{$animal->quantity}}</td>
-                        <td>{{$animal->takenCareBy->name}}</td>
-                        <td>{{$animal->isIn->name}}</td>
-                        <td>{{$animal->description}}</td>
-                        <td>{{$animal->arrival_date}}</td>
-                        <td><img class="dataImage" src="{{asset('images/' . $animal->image)}}"></td>
-                        <td><a href="{{route('animal.edit',$animal)}}"><button type="submit" class="btn btn-primary">Edit</button></a></td>
+                    @foreach ($animals as $animal)
+                        <tr>
+                            <td>
+                                <p>{{ $animal->name }}</p>
+                            </td>
+                            <td>
+                                <p>{{ $animal->family }}</p>
+                            </td>
+                            <td>{{ $animal->diet }}</td>
+                            <td>{{ $animal->quantity }}</td>
+                            <td>{{ $animal->takenCareBy->name }}</td>
+                            <td>{{ $animal->isIn->name }}</td>
+                            <td>{{ $animal->description }}</td>
+                            <td>{{ $animal->arrival_date }}</td>
+                            <td><img class="dataImage" src="{{ asset('images/' . $animal->image) }}"></td>
+                            <td><a href="{{ route('animal.edit', $animal) }}"><button type="submit"
+                                        class="btn btn-primary">Edit</button></a></td>
 
-                        <td><form action="{{route('animal.destroy',$animal)}}" method="post">
-                            {{csrf_field()}} 
-                            {{-- orr @csrf --}}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form></td>
-                    </tr>
+                            <td>
+                                <form action="{{ route('animal.destroy', $animal) }}" method="post">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

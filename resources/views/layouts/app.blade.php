@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="{{ URL::asset('/images/singaporezoo.svg') }}" type="image/x-icon"/>    <!-- CSRF Token -->
+    <link rel="icon" href="{{ URL::asset('/images/singaporezoo.svg') }}" type="image/x-icon" /> <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
@@ -16,73 +17,87 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Nunito+Sans:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Nunito+Sans:wght@900&display=swap"
+        rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> --}}
 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="bootstrap.min.css" />
     <style>
-        .externalLogo{
+        .externalLogo {
             height: 5vw;
             widows: auto;
         }
-        .tableImage{
+
+        .tableImage {
             width: 10vw;
             height: 10vw;
             object-fit: cover;
         }
-        .dataImage{
+
+        .dataImage {
             width: 5vw;
             height: 5vw;
             object-fit: cover;
         }
-        .carouselImage{
+
+        .carouselImage {
             object-fit: cover;
             width: 100%;
             height: 40vw;
         }
-        td > * {
-            vertical-align : middle;
+
+        td>* {
+            vertical-align: middle;
         }
-        .test{
+
+        .test {
             background-color: blueviolet;
         }
-        .fullPagePls{
+
+        .fullPagePls {
             margin: 0;
         }
-        .left{
+
+        .left {
             float: left;
             width: 45%;
             margin: 1vw;
             border-radius: 2vw;
         }
-        .right{
+
+        .right {
             float: right;
             width: 45%;
             margin: 1vw;
             border-radius: 2vw;
 
         }
-        .adminChoice{
+
+        .adminChoice {
             padding-left: 15vw;
             padding-right: 15vw;
-            margin:0;
+            margin: 0;
         }
-        .greenBackground{
+
+        .greenBackground {
             background-color: #44702f;
             color: white;
         }
-        .greenButton{
+
+        .greenButton {
             background-color: #53883a;
             color: white;
         }
-        .greenButton:hover{
+
+        .greenButton:hover {
             background-color: #44702f;
             color: white;
         }
+
         .carousel-item::after {
             content: '';
             position: absolute;
@@ -93,7 +108,8 @@
             box-shadow: 0px 0px 70px 80px rgba(0, 0, 0, 0.5) inset;
 
         }
-        .landingImage{
+
+        .landingImage {
             background-image: url('images/singapore_zoo.jpg');
             background-repeat: no-repeat;
             background-size: cover;
@@ -105,52 +121,64 @@
             color: white;
             padding-left: 2vw;
         }
-        .landingText{
+
+        .landingText {
             text-align: center;
-            padding : 4vw;
-            background-color: rgba(68,112, 47);
+            padding: 4vw;
+            background-color: rgba(68, 112, 47);
             color: white;
         }
-        .bigImage{
+
+        .bigImage {
             object-fit: cover;
             width: 100%;
             height: 40vw;
         }
+
         .carousel {
             width: 100%;
-            overflow:hidden;
+            overflow: hidden;
         }
-        .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
             display: block;
             height: auto;
             max-width: 100%;
             line-height: 1;
             width: 100%;
         }
-        .nunito{
+
+        .nunito {
             font-family: "Nunito Sans";
             font-weight: bold;
         }
-        .greya{
+
+        .greya {
             font-family: "Alegreya";
         }
-        .biggerText{
+
+        .biggerText {
             font-size: 2vw;
 
         }
-        .nunitow{
+
+        .nunitow {
             font-family: "Nunito Sans";
             font-weight: bold;
         }
-        .shade{
-            background-color: rgba(68,112, 47, 0.3);
+
+        .shade {
+            background-color: rgba(68, 112, 47, 0.3);
         }
-        .aboutZoo{
+
+        .aboutZoo {
             display: grid;
             grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
             grid-template-rows: minmax(4vw, auto);
             margin-bottom: 4vw;
         }
+
         .aboutTitle {
             grid-column: 2/5;
             grid-row: 2/4;
@@ -159,6 +187,7 @@
             padding-left: 1vw;
             color: #345724;
         }
+
         .aboutExplain {
             grid-column: 2/7;
             grid-row: 4/6;
@@ -166,7 +195,8 @@
             text-align: left;
             font-size: 2vw;
         }
-        .aboutImage{
+
+        .aboutImage {
             grid-column: 1/2;
             grid-row: 2/6;
             text-align: left;
@@ -174,47 +204,55 @@
             width: 50vw;
 
         }
-        .logo{
+
+        .logo {
             width: 5vw;
             height: auto;
-            background: rgb(43,72,29);
-            background: radial-gradient(circle, rgba(43,72,29,0.9270658605238971) 0%, rgba(252,176,69,0) 60%, rgba(253,29,29,0) 100%);
+            background: rgb(43, 72, 29);
+            background: radial-gradient(circle, rgba(43, 72, 29, 0.9270658605238971) 0%, rgba(252, 176, 69, 0) 60%, rgba(253, 29, 29, 0) 100%);
 
-           padding: 0.1vw;
+            padding: 0.1vw;
             border-radius: 0.5vw;
         }
-        .carouselBorder{
+
+        .carouselBorder {
             padding-top: 2vw;
             padding-bottom: 2vw;
             background-color: #44702f;
         }
-        .indexData{
+
+        .indexData {
             align-items: center;
             text-align: center;
             margin-top: 2vw;
             margin-bottom: 2vw;
         }
-        .indexTable{
+
+        .indexTable {
             margin-top: 2vw;
             margin-left: auto;
             margin-right: auto;
         }
-        .indexTable thead{
+
+        .indexTable thead {
             font-family: 'Nunito Sans';
         }
-        .indexTable tbody{
+
+        .indexTable tbody {
             font-family: 'Nunito Sans';
             font-size: 1vw;
         }
 
-        .nav-item:hover{
-            background-color: rgba(68,112, 47, 0.8);
+        .nav-item:hover {
+            background-color: rgba(68, 112, 47, 0.8);
         }
-        .underL{
+
+        .underL {
             text-decoration: underline;
 
         }
-        footer{
+
+        footer {
             background-color: #44702f;
             color: white;
             text-align: center;
@@ -225,64 +263,77 @@
             font-size: 3vw;
             padding-bottom: 1vw;
         }
-        .smolText{
+
+        .smolText {
             font-size: 1vw;
         }
-        .adminSection{
+
+        .adminSection {
             padding-top: 1vw;
             padding-bottom: 1vw;
-            background-color: rgba(68,112, 47, 0.8);
+            background-color: rgba(68, 112, 47, 0.8);
             text-align: center;
         }
-        .adminSection h2{
+
+        .adminSection h2 {
             font-size: 3vw;
             text-align: center;
 
         }
-        .adminSection h1{
+
+        .adminSection h1 {
             font-size: 4.5vw;
         }
-        .headFlag{
+
+        .headFlag {
             color: white;
             background-color: #345724;
             padding-left: 1vw;
-            padding-top:4vw;
+            padding-top: 4vw;
         }
-        .headFlag h1{
+
+        .headFlag h1 {
             font-size: 7vw;
         }
-        .adminTable{
+
+        .adminTable {
             text-align: center;
         }
-        .adminTable thead{
+
+        .adminTable thead {
             font-family: "Nunito Sans"
         }
-        td > * {
-            vertical-align : middle;
+
+        td>* {
+            vertical-align: middle;
         }
-        .centerAlign{
+
+        .centerAlign {
             text-align: center;
-            padding-left:0;
+            padding-left: 0;
             padding-right: 0;
         }
-        .formInput{
-            padding:1vw;
+
+        .formInput {
+            padding: 1vw;
         }
-        .formInput label{
+
+        .formInput label {
             font-family: "Nunito Sans";
         }
-
-
     </style>
 </head>
+
 <body>
     <div id="app">
-        <nav class="navbar navbar-dark navbar-expand-md navbar navbar-expand-lg fixed-top shade" >
+        <nav class="navbar navbar-dark navbar-expand-md navbar navbar-expand-lg fixed-top shade">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo" src="{{asset('images/singaporezoo.svg')}}" alt="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -291,13 +342,13 @@
                     @auth()
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                        <a class="nav-link active nunitow" href="{{route('animal.index')}}">ANIMAL</a>
+                            <a class="nav-link active nunitow" href="{{route('animal.index')}}">ANIMAL</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active nunitow" href="{{route('habitat.index')}}">HABITAT</a>
+                            <a class="nav-link active nunitow" href="{{route('habitat.index')}}">HABITAT</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active nunitow" href="{{route('user.index')}}">CARETAKER</a>
+                            <a class="nav-link active nunitow" href="{{route('user.index')}}">CARETAKER</a>
                         </li>
                     </ul>
                     @endauth
@@ -305,33 +356,33 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link nunitow active" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link nunitow active" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                        <li class="nav-item">
+                            <a class="nav-link nunitow active" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link nunitow active" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle nunitow active" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle nunitow active" href="#"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{ url('/') }}">
-                                        <a class="dropdown-item nunitow" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a href="{{ url('/') }}">
+                                    <a class="dropdown-item nunitow" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
+                                        {{ __('Logout') }}
                                     </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -342,7 +393,8 @@
             @yield('content')
         </main>
     </div>
-    
+
 
 </body>
+
 </html>
