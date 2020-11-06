@@ -298,6 +298,7 @@
 
         .adminTable {
             text-align: center;
+            margin-bottom: 2vw;
         }
 
         .adminTable thead {
